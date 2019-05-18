@@ -46,9 +46,10 @@ namespace TShock_Presence
         {
             ServerApi.Hooks.ServerJoin.Register(this, OnJoin);
             ServerApi.Hooks.ServerLeave.Register(this, OnLeave);
-            TShockDiscordPresence.Start();
             CheckForConfigFile();
-            Console.WriteLine("TShockPresence has Loaded.");
+            Console.WriteLine("Checked!");
+            TShockDiscordPresence.Start();
+            Console.WriteLine("Started!");
         }
 
         private void CheckForConfigFile()

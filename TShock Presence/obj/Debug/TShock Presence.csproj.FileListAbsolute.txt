@@ -13,3 +13,4 @@ C:\Users\Yaekith\source\repos\TShock Presence\TShock Presence\obj\Debug\TShock P
 C:\Users\Yaekith\source\repos\TShock Presence\TShock Presence\obj\Debug\TShock Presence.csproj.CopyComplete
 C:\Users\Yaekith\source\repos\TShock Presence\TShock Presence\obj\Debug\TShock Presence.dll
 C:\Users\Yaekith\source\repos\TShock Presence\TShock Presence\obj\Debug\TShock Presence.pdb
+C:\Users\Yaekith\source\repos\TShock Presence\TShock Presence\bin\Debug\TShock Presence.dll.config

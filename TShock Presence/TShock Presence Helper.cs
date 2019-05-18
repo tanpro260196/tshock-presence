@@ -59,7 +59,6 @@ namespace Utils
 
         public static string GetIP()
         {
-            if (Terraria.Netplay.ServerIPText == "127.0.0.1") { return "localhost"; }
             return new WebClient().DownloadString("https://api.ipify.org");
         }
         public static string GetPort()
