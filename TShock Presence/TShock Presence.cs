@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,7 +47,18 @@ namespace TShock_Presence
             ServerApi.Hooks.ServerJoin.Register(this, OnJoin);
             ServerApi.Hooks.ServerLeave.Register(this, OnLeave);
             TShockDiscordPresence.Start();
+            CheckForConfigFile();
             Console.WriteLine("TShockPresence has Loaded.");
+        }
+
+        private void CheckForConfigFile()
+        {
+            if (!File.Exists("TShockPresenceConfig.json"))
+            {
+                File.WriteAllText("TShockPresenceConfig.json", JsonConvert.SerializeObject(new Config { applicationID = "578495448273256450", LargeImageKey = "tshock_small_icon", SmallImageKey = "tshock_normal" }));
+            }
+
+            Utils.Configuration = JsonConvert.DeserializeObject<Config>(File.ReadAllText("TShockPresenceConfig.json"));
         }
 
         private void OnJoin(JoinEventArgs args)

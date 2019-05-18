@@ -9,5 +9,6 @@ namespace TShock_Presence
     public static class Utils
     {
         public static int PlayerCount = 0;
+        public static Config Configuration { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using DiscordRPCUtils;
 using TShockAPI;
-
+using TShock_Presence;
 namespace Utils
 {
     public static class TShockDiscordPresence
@@ -19,7 +19,7 @@ namespace Utils
             DiscordRPC.EventHandlers eventHandler = default(DiscordRPC.EventHandlers);
             new Thread(() =>
             {
-                DiscordRPC.Initialize("578495448273256450", ref eventHandler, false, null);
+                DiscordRPC.Initialize(TShock_Presence.Utils.Configuration.applicationID, ref eventHandler, false, null);
                 for(; ;)
                 {
                     Thread.Sleep(30000);
@@ -32,9 +32,9 @@ namespace Utils
         {
             Presence.details = "Hosting a Server";
             Presence.state = $"on {GetIP()}:{GetPort()}";
-            Presence.largeImageKey = "tshock_small_icon";
+            Presence.largeImageKey = TShock_Presence.Utils.Configuration.LargeImageKey;
             Presence.largeImageText = $"With {GetPlayers()} player(s)";
-            Presence.smallImageKey = "tshock_normal";
+            Presence.smallImageKey = TShock_Presence.Utils.Configuration.SmallImageKey;
             Presence.smallImageText = $"Using {GetPluginCount()} plugin(s)";
             DiscordRPC.UpdatePresence(Presence);
         }
